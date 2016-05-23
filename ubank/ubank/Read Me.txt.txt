@@ -1,0 +1,4 @@
+After publish 
+
+1. copy folder aspnet_client
+2. copy all RPT file to the destination folder

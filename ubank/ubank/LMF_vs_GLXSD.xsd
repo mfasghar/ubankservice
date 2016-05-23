@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="LMF_vs_GLXSD" targetNamespace="http://tempuri.org/LMF_vs_GLXSD.xsd" xmlns:mstns="http://tempuri.org/LMF_vs_GLXSD.xsd" xmlns="http://tempuri.org/LMF_vs_GLXSD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="LMF_vs_GLXSD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="LMF_vs_GLXSD" msprop:Generator_UserDSName="LMF_vs_GLXSD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BRANCH_CODE" msprop:Generator_ColumnVarNameInTable="columnBRANCH_CODE" msprop:Generator_ColumnPropNameInRow="BRANCH_CODE" msprop:Generator_ColumnPropNameInTable="BRANCH_CODEColumn" msprop:Generator_UserColumnName="BRANCH_CODE" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCH_NAME" msprop:Generator_ColumnVarNameInTable="columnBRANCH_NAME" msprop:Generator_ColumnPropNameInRow="BRANCH_NAME" msprop:Generator_ColumnPropNameInTable="BRANCH_NAMEColumn" msprop:Generator_UserColumnName="BRANCH_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="LOAN_PRODUCT" msprop:Generator_ColumnVarNameInTable="columnLOAN_PRODUCT" msprop:Generator_ColumnPropNameInRow="LOAN_PRODUCT" msprop:Generator_ColumnPropNameInTable="LOAN_PRODUCTColumn" msprop:Generator_UserColumnName="LOAN_PRODUCT" type="xs:string" minOccurs="0" />
+              <xs:element name="PRODUCT_NAME" msprop:Generator_ColumnVarNameInTable="columnPRODUCT_NAME" msprop:Generator_ColumnPropNameInRow="PRODUCT_NAME" msprop:Generator_ColumnPropNameInTable="PRODUCT_NAMEColumn" msprop:Generator_UserColumnName="PRODUCT_NAME" type="xs:string" minOccurs="0" />
+              <xs:element name="LOAN_GL_BALANCE" msprop:Generator_ColumnVarNameInTable="columnLOAN_GL_BALANCE" msprop:Generator_ColumnPropNameInRow="LOAN_GL_BALANCE" msprop:Generator_ColumnPropNameInTable="LOAN_GL_BALANCEColumn" msprop:Generator_UserColumnName="LOAN_GL_BALANCE" type="xs:long" minOccurs="0" />
+              <xs:element name="LOAN_ACC_BALANCE" msprop:Generator_ColumnVarNameInTable="columnLOAN_ACC_BALANCE" msprop:Generator_ColumnPropNameInRow="LOAN_ACC_BALANCE" msprop:Generator_ColumnPropNameInTable="LOAN_ACC_BALANCEColumn" msprop:Generator_UserColumnName="LOAN_ACC_BALANCE" type="xs:long" minOccurs="0" />
+              <xs:element name="LOAN_MODULE_BALANCE" msprop:Generator_ColumnVarNameInTable="columnLOAN_MODULE_BALANCE" msprop:Generator_ColumnPropNameInRow="LOAN_MODULE_BALANCE" msprop:Generator_ColumnPropNameInTable="LOAN_MODULE_BALANCEColumn" msprop:Generator_UserColumnName="LOAN_MODULE_BALANCE" type="xs:long" minOccurs="0" />
+              <xs:element name="GL_VS_ACC" msprop:Generator_ColumnVarNameInTable="columnGL_VS_ACC" msprop:Generator_ColumnPropNameInRow="GL_VS_ACC" msprop:Generator_ColumnPropNameInTable="GL_VS_ACCColumn" msprop:Generator_UserColumnName="GL_VS_ACC" type="xs:long" minOccurs="0" />
+              <xs:element name="AC_VS_LOAN" msprop:Generator_ColumnVarNameInTable="columnAC_VS_LOAN" msprop:Generator_ColumnPropNameInRow="AC_VS_LOAN" msprop:Generator_ColumnPropNameInTable="AC_VS_LOANColumn" msprop:Generator_UserColumnName="AC_VS_LOAN" type="xs:long" minOccurs="0" />
+              <xs:element name="NOOF_ACC_VS_LOANS" msprop:Generator_ColumnVarNameInTable="columnNOOF_ACC_VS_LOANS" msprop:Generator_ColumnPropNameInRow="NOOF_ACC_VS_LOANS" msprop:Generator_ColumnPropNameInTable="NOOF_ACC_VS_LOANSColumn" msprop:Generator_UserColumnName="NOOF_ACC_VS_LOANS" type="xs:long" minOccurs="0" />
+              <xs:element name="DAT_CREAT" msprop:Generator_ColumnVarNameInTable="columnDAT_CREAT" msprop:Generator_ColumnPropNameInRow="DAT_CREAT" msprop:Generator_ColumnPropNameInTable="DAT_CREATColumn" msprop:Generator_UserColumnName="DAT_CREAT" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/SMS_SEND/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.example.org/SMS_SEND/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="SendSms" type="tns:SendSmsRequest" />
+  <xsd:element name="SendSmsResponse" type="tns:SendSmsResponseRow" />
+  <xsd:complexType name="SendSmsRequest">
+    <xsd:sequence>
+      <xsd:element name="From_String" type="xsd:string" />
+      <xsd:element name="To_MSISDN" type="xsd:string" />
+      <xsd:element name="SMS_TEXT" type="xsd:string" />
+      <xsd:element name="UserName" type="xsd:string" />
+      <xsd:element name="Password" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SendSmsResponseRow">
+    <xsd:sequence>
+      <xsd:element name="ResultCode" type="xsd:string" />
+      <xsd:element name="ResultDesc" type="xsd:string" />
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

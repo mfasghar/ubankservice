@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ubank.SiteMaster" %>
+
+<%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="asp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <%--<script type="text/javascript" src="JS/stmenu.js"></script>--%>
+    <script type="text/javascript" src="js/stmenu.js"></script>
+     <script src="/Scripts/jquery-2.1.0.js" type="text/javascript"></script>  
+    <title>Ubank Intranet Website</title>
+    <script type="text/javascript" src='<%#Page.ResolveUrl("~/Scripts/jquery-2.1.0.min.js")%>'></script>
+    <script type="text/javascript" src='<%#Page.ResolveUrl("~/Scripts/ticker.js")%>'></script>
+    <script type="text/javascript" src="~/js/stmenu.js"></script>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    
+    <link href="Styles/sinorcaish-screen.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/CustomStyles.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/NewsTicker.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .style1
+        {
+            height: 23px;
+        }
+        .style2
+        {
+            width: 32px;
+            height: 23px;
+        }
+        .style3
+        {
+            width: 200px;
+            height: 2px;
+        }
+        .style7
+        {
+            width: 13px;
+            height: 2px;
+        }
+        .style8
+        {
+            width: 40px;
+            height: 2px;
+        }
+        .style9
+        {
+            width: 367px;
+            height: 2px;
+        }
+        .style10
+        {
+            height: 23px;
+        }
+        .style11
+        {
+            height: 2px;
+            width: 287px;
+        }
+        .style12
+        {
+            width: 368px;
+            height: 23px;
+        }
+        </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header" 
+                        
+            style="background-image: url('/pic/UbankTopTop 10 image.jpg'); background-repeat: no-repeat;">
+            <asp:Panel ID="Panel2" runat="server" 
+                style="top: 91px; left: 4px; position: absolute; height: 22px; width: 636px; right: 310px;">
+                <table style="width:148%; height: 14px;" border="0" cellpadding="0" 
+                    cellspacing="0">
+                    <tr>
+                        <td class="style7">
+                            </td>
+                        <td class="style3">
+                            <asp:Label ID="Label1" runat="server" ForeColor="#0066CC" Font-Bold="True"></asp:Label>
+                        </td>
+                        <td class="style8">
+                            </td>
+                        <td class="style9">
+                            <asp:Label ID="lblComputerName" runat="server" ForeColor="#FF3300" 
+                                Font-Size="XX-Small"></asp:Label>
+                        </td>
+                        <td class="style11" style="font-size: x-small">
+                        <script type="text/javascript" src="js/TopMenu.js"></script>
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+            <table id="Table2" border="0" cellpadding="0" cellspacing="0" 
+                style="Z-INDEX: 104; LEFT: 487px; WIDTH: 430px; POSITION: absolute; TOP: 1px; HEIGHT: 18px" 
+                width="300">
+                <tr>
+                    <td align="center">
+                        Web portal :: U Micro Finance Bank Ltd.</td>
+                </tr>
+            </table>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
+            <br />
+            <asp:Panel ID="Panel1" runat="server" Height="55px" 
+                
+                style="margin-left: 261px; margin-top: 9px; margin-bottom: 2px; margin-right: 7px;" 
+                Width="679px">
+                <table style="margin-bottom: 0px; font-size: x-small; margin-top: 0px; margin-left: 4px; vertical-align: middle; text-align: left;" 
+                    align="center">
+                    <tr>
+                        <td class="style12" valign="top">
+                            <asp:LinkButton ID="logout" runat="server" Visible="False">logout</asp:LinkButton>
+                        </td>
+                        <td class="style1" valign="top">
+                            &nbsp;ID</td>
+                        <td class="style10">
+                            <asp:TextBox ID="txtUserName" runat="server" BorderStyle="Solid" 
+                                BorderWidth="1px" Font-Bold="False" Font-Size="XX-Small" Width="95px"></asp:TextBox>
+                            <asp:TextBoxWatermarkExtender ID="txtUserName_TextBoxWatermarkExtender" 
+                                runat="server" Enabled="True" TargetControlID="txtUserName" 
+                                WatermarkCssClass="PasswordUserNameText" WatermarkText="Enter Your Login ID">
+                            </asp:TextBoxWatermarkExtender>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                ControlToValidate="txtUserName" ErrorMessage="User Id Can't be empty">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="style10" valign="top">
+                            password</td>
+                        <td class="style10">
+                            <asp:TextBox ID="txtPassword" runat="server" BorderStyle="Solid" 
+                                BorderWidth="1px" Font-Size="XX-Small" TextMode="Password" Width="95px"></asp:TextBox>
+                            <asp:TextBoxWatermarkExtender ID="txtPassword_TextBoxWatermarkExtender" 
+                                runat="server" Enabled="True" TargetControlID="txtPassword" 
+                                WatermarkCssClass="PasswordUserNameText" WatermarkText="password">
+                            </asp:TextBoxWatermarkExtender>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                ControlToValidate="txtPassword" ErrorMessage="Password Can't be empty">*</asp:RequiredFieldValidator>
+                        </td>
+                        <td class="style2" valign="top">
+                            <asp:ImageButton ID="cmdSubmit" runat="server" Height="17px" 
+                                ImageUrl="~/pic/login.png" onclick="cmdSubmit_Click" Width="25px" />
+                            <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="style12" valign="top">
+                            &nbsp;</td>
+                        <td class="style1" colspan="5" valign="top">
+                            <asp:Label ID="lblMessage" runat="server" ForeColor="Red" Height="16px" 
+                                Width="88px"></asp:Label>
+                        </td>
+                    </tr>
+                </table>
+            </asp:Panel>
+            <br />
+            <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" 
+                Font-Size="0.8em" PathSeparator=" : " 
+                style="z-index: 1; left: 22px; top: 125px; position: absolute">
+                <CurrentNodeStyle ForeColor="#333333" />
+                <NodeStyle Font-Bold="True" Font-Size="X-Small" ForeColor="#284E98" />
+                <PathSeparatorStyle Font-Bold="True" ForeColor="#507CD1" />
+                <RootNodeStyle Font-Bold="True" ForeColor="#507CD1" />
+            </asp:SiteMapPath>
+        </div>
+        <div class="main" style="height:auto;">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div style="background-image: url('/pic/UbankTopTop6image2.jpg'); background-repeat: no-repeat; height: 35px; ">
+        </div>
+    </div>
+    <div class="footer">
+        
+                            <asp:Label ID="Label4" runat="server" Font-Size="XX-Small" ForeColor="#003366" 
+                                Text="COPYRIGHT © 2015, Ubank . ALL RIGHTS RESERVED"></asp:Label>
+        
+    </div>
+    </form>
+    
+</body>
+</html>

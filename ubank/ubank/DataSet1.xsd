@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=skm;Persist Security Info=True;User ID=system;Password=oracle;Unicode=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="skm.SYSTEM" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LMFLOANSHISTORYTableAdapter" GeneratorDataComponentClassName="LMFLOANSHISTORYTableAdapter" Name="LMFLOANSHISTORY" UserDataComponentName="LMFLOANSHISTORYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="skm.SYSTEM" DbObjectName="LMF.LMFLOANSHISTORY" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT BRANCH_CODE, LOAN_CODE, CLSF_SET_ITEM_CODE, BORROWER_CODE, DESN, PRINCIPAL, AMOUNT_APPLIED, PERIOD_MONTH, PERIOD_YEAR, DATE_LAST_REP, DATE_DUE, DAYS_PAST_DUE, REP_COUNT, REP_LATE_NUMBER, PREPAYMENT_INT, REP_LAST_COUNTER, ACTIVITY_SEQ_CODE FROM LMF.LMFLOANSHISTORY</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BRANCH_CODE" DataSetColumn="BRANCH_CODE" />
+              <Mapping SourceColumn="LOAN_CODE" DataSetColumn="LOAN_CODE" />
+              <Mapping SourceColumn="CLSF_SET_ITEM_CODE" DataSetColumn="CLSF_SET_ITEM_CODE" />
+              <Mapping SourceColumn="BORROWER_CODE" DataSetColumn="BORROWER_CODE" />
+              <Mapping SourceColumn="DESN" DataSetColumn="DESN" />
+              <Mapping SourceColumn="PRINCIPAL" DataSetColumn="PRINCIPAL" />
+              <Mapping SourceColumn="AMOUNT_APPLIED" DataSetColumn="AMOUNT_APPLIED" />
+              <Mapping SourceColumn="PERIOD_MONTH" DataSetColumn="PERIOD_MONTH" />
+              <Mapping SourceColumn="PERIOD_YEAR" DataSetColumn="PERIOD_YEAR" />
+              <Mapping SourceColumn="DATE_LAST_REP" DataSetColumn="DATE_LAST_REP" />
+              <Mapping SourceColumn="DATE_DUE" DataSetColumn="DATE_DUE" />
+              <Mapping SourceColumn="DAYS_PAST_DUE" DataSetColumn="DAYS_PAST_DUE" />
+              <Mapping SourceColumn="REP_COUNT" DataSetColumn="REP_COUNT" />
+              <Mapping SourceColumn="REP_LATE_NUMBER" DataSetColumn="REP_LATE_NUMBER" />
+              <Mapping SourceColumn="PREPAYMENT_INT" DataSetColumn="PREPAYMENT_INT" />
+              <Mapping SourceColumn="REP_LAST_COUNTER" DataSetColumn="REP_LAST_COUNTER" />
+              <Mapping SourceColumn="ACTIVITY_SEQ_CODE" DataSetColumn="ACTIVITY_SEQ_CODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LMFLOANSHISTORY" msprop:Generator_TableClassName="LMFLOANSHISTORYDataTable" msprop:Generator_TableVarName="tableLMFLOANSHISTORY" msprop:Generator_TablePropName="LMFLOANSHISTORY" msprop:Generator_RowDeletingName="LMFLOANSHISTORYRowDeleting" msprop:Generator_RowChangingName="LMFLOANSHISTORYRowChanging" msprop:Generator_RowEvHandlerName="LMFLOANSHISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="LMFLOANSHISTORYRowDeleted" msprop:Generator_UserTableName="LMFLOANSHISTORY" msprop:Generator_RowChangedName="LMFLOANSHISTORYRowChanged" msprop:Generator_RowEvArgName="LMFLOANSHISTORYRowChangeEvent" msprop:Generator_RowClassName="LMFLOANSHISTORYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BRANCH_CODE" msprop:Generator_ColumnVarNameInTable="columnBRANCH_CODE" msprop:Generator_ColumnPropNameInRow="BRANCH_CODE" msprop:Generator_ColumnPropNameInTable="BRANCH_CODEColumn" msprop:Generator_UserColumnName="BRANCH_CODE" type="xs:decimal" />
+              <xs:element name="LOAN_CODE" msprop:Generator_ColumnVarNameInTable="columnLOAN_CODE" msprop:Generator_ColumnPropNameInRow="LOAN_CODE" msprop:Generator_ColumnPropNameInTable="LOAN_CODEColumn" msprop:Generator_UserColumnName="LOAN_CODE" type="xs:decimal" />
+              <xs:element name="CLSF_SET_ITEM_CODE" msprop:Generator_ColumnVarNameInTable="columnCLSF_SET_ITEM_CODE" msprop:Generator_ColumnPropNameInRow="CLSF_SET_ITEM_CODE" msprop:Generator_ColumnPropNameInTable="CLSF_SET_ITEM_CODEColumn" msprop:Generator_UserColumnName="CLSF_SET_ITEM_CODE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BORROWER_CODE" msprop:Generator_ColumnVarNameInTable="columnBORROWER_CODE" msprop:Generator_ColumnPropNameInRow="BORROWER_CODE" msprop:Generator_ColumnPropNameInTable="BORROWER_CODEColumn" msprop:Generator_UserColumnName="BORROWER_CODE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DESN" msprop:Generator_ColumnVarNameInTable="columnDESN" msprop:Generator_ColumnPropNameInRow="DESN" msprop:Generator_ColumnPropNameInTable="DESNColumn" msprop:Generator_UserColumnName="DESN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PRINCIPAL" msprop:Generator_ColumnVarNameInTable="columnPRINCIPAL" msprop:Generator_ColumnPropNameInRow="PRINCIPAL" msprop:Generator_ColumnPropNameInTable="PRINCIPALColumn" msprop:Generator_UserColumnName="PRINCIPAL" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AMOUNT_APPLIED" msprop:Generator_ColumnVarNameInTable="columnAMOUNT_APPLIED" msprop:Generator_ColumnPropNameInRow="AMOUNT_APPLIED" msprop:Generator_ColumnPropNameInTable="AMOUNT_APPLIEDColumn" msprop:Generator_UserColumnName="AMOUNT_APPLIED" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PERIOD_MONTH" msprop:Generator_ColumnVarNameInTable="columnPERIOD_MONTH" msprop:Generator_ColumnPropNameInRow="PERIOD_MONTH" msprop:Generator_ColumnPropNameInTable="PERIOD_MONTHColumn" msprop:Generator_UserColumnName="PERIOD_MONTH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PERIOD_YEAR" msprop:Generator_ColumnVarNameInTable="columnPERIOD_YEAR" msprop:Generator_ColumnPropNameInRow="PERIOD_YEAR" msprop:Generator_ColumnPropNameInTable="PERIOD_YEARColumn" msprop:Generator_UserColumnName="PERIOD_YEAR" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DATE_LAST_REP" msprop:Generator_ColumnVarNameInTable="columnDATE_LAST_REP" msprop:Generator_ColumnPropNameInRow="DATE_LAST_REP" msprop:Generator_ColumnPropNameInTable="DATE_LAST_REPColumn" msprop:Generator_UserColumnName="DATE_LAST_REP" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DATE_DUE" msprop:Generator_ColumnVarNameInTable="columnDATE_DUE" msprop:Generator_ColumnPropNameInRow="DATE_DUE" msprop:Generator_ColumnPropNameInTable="DATE_DUEColumn" msprop:Generator_UserColumnName="DATE_DUE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DAYS_PAST_DUE" msprop:Generator_ColumnVarNameInTable="columnDAYS_PAST_DUE" msprop:Generator_ColumnPropNameInRow="DAYS_PAST_DUE" msprop:Generator_ColumnPropNameInTable="DAYS_PAST_DUEColumn" msprop:Generator_UserColumnName="DAYS_PAST_DUE" type="xs:decimal" minOccurs="0" />
+              <xs:element name="REP_COUNT" msprop:Generator_ColumnVarNameInTable="columnREP_COUNT" msprop:Generator_ColumnPropNameInRow="REP_COUNT" msprop:Generator_ColumnPropNameInTable="REP_COUNTColumn" msprop:Generator_UserColumnName="REP_COUNT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="REP_LATE_NUMBER" msprop:Generator_ColumnVarNameInTable="columnREP_LATE_NUMBER" msprop:Generator_ColumnPropNameInRow="REP_LATE_NUMBER" msprop:Generator_ColumnPropNameInTable="REP_LATE_NUMBERColumn" msprop:Generator_UserColumnName="REP_LATE_NUMBER" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PREPAYMENT_INT" msprop:Generator_ColumnVarNameInTable="columnPREPAYMENT_INT" msprop:Generator_ColumnPropNameInRow="PREPAYMENT_INT" msprop:Generator_ColumnPropNameInTable="PREPAYMENT_INTColumn" msprop:Generator_UserColumnName="PREPAYMENT_INT" type="xs:decimal" minOccurs="0" />
+              <xs:element name="REP_LAST_COUNTER" msprop:Generator_ColumnVarNameInTable="columnREP_LAST_COUNTER" msprop:Generator_ColumnPropNameInRow="REP_LAST_COUNTER" msprop:Generator_ColumnPropNameInTable="REP_LAST_COUNTERColumn" msprop:Generator_UserColumnName="REP_LAST_COUNTER" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ACTIVITY_SEQ_CODE" msprop:Generator_ColumnVarNameInTable="columnACTIVITY_SEQ_CODE" msprop:Generator_ColumnPropNameInRow="ACTIVITY_SEQ_CODE" msprop:Generator_ColumnPropNameInTable="ACTIVITY_SEQ_CODEColumn" msprop:Generator_UserColumnName="ACTIVITY_SEQ_CODE" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

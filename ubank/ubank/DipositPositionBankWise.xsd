@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DipositPositionBankWise" targetNamespace="http://tempuri.org/DipositPositionBankWise.xsd" xmlns:mstns="http://tempuri.org/DipositPositionBankWise.xsd" xmlns="http://tempuri.org/DipositPositionBankWise.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString1 (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString1.ConnectionString" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DipositPositionBankWise" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DipositPositionBankWise" msprop:Generator_UserDSName="DipositPositionBankWise">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PROD_TYPE" msprop:Generator_ColumnVarNameInTable="columnPROD_TYPE" msprop:Generator_ColumnPropNameInRow="PROD_TYPE" msprop:Generator_ColumnPropNameInTable="PROD_TYPEColumn" msprop:Generator_UserColumnName="PROD_TYPE" type="xs:string" minOccurs="0" />
+              <xs:element name="DAT_START" msprop:Generator_ColumnVarNameInTable="columnDAT_START" msprop:Generator_ColumnPropNameInRow="DAT_START" msprop:Generator_ColumnPropNameInTable="DAT_STARTColumn" msprop:Generator_UserColumnName="DAT_START" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DAT_END" msprop:Generator_ColumnVarNameInTable="columnDAT_END" msprop:Generator_ColumnPropNameInRow="DAT_END" msprop:Generator_ColumnPropNameInTable="DAT_ENDColumn" msprop:Generator_UserColumnName="DAT_END" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="STARTBAL" msprop:Generator_ColumnVarNameInTable="columnSTARTBAL" msprop:Generator_ColumnPropNameInRow="STARTBAL" msprop:Generator_ColumnPropNameInTable="STARTBALColumn" msprop:Generator_UserColumnName="STARTBAL" type="xs:long" minOccurs="0" />
+              <xs:element name="CLOSEBAL" msprop:Generator_ColumnVarNameInTable="columnCLOSEBAL" msprop:Generator_ColumnPropNameInRow="CLOSEBAL" msprop:Generator_ColumnPropNameInTable="CLOSEBALColumn" msprop:Generator_UserColumnName="CLOSEBAL" type="xs:long" minOccurs="0" />
+              <xs:element name="TOTAL_In" msprop:Generator_ColumnVarNameInTable="columnTOTAL_In" msprop:Generator_ColumnPropNameInRow="TOTAL_In" msprop:Generator_ColumnPropNameInTable="TOTAL_InColumn" msprop:Generator_UserColumnName="TOTAL_In" type="xs:long" minOccurs="0" />
+              <xs:element name="TOTAL_Out" msprop:Generator_ColumnVarNameInTable="columnTOTAL_Out" msprop:Generator_ColumnPropNameInRow="TOTAL_Out" msprop:Generator_ColumnPropNameInTable="TOTAL_OutColumn" msprop:Generator_UserColumnName="TOTAL_Out" type="xs:long" minOccurs="0" />
+              <xs:element name="NET_InOut" msprop:Generator_ColumnVarNameInTable="columnNET_InOut" msprop:Generator_ColumnPropNameInRow="NET_InOut" msprop:Generator_ColumnPropNameInTable="NET_InOutColumn" msprop:Generator_UserColumnName="NET_InOut" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

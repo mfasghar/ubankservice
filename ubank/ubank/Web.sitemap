@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="Default.aspx" title="Home Page"  description="Ubank">
+		<siteMapNode url="main2.aspx" title="Log off"  description="Log of from the system">
+			<siteMapNode url="idrequestaddView.aspx" title="User Creation/Modification Request"  description="User Creation/Modification Request">
+			</siteMapNode>
+			<siteMapNode url="idsecondlevel.aspx" title="Request Supervison"  description="Supervision of Creation/Modification Request">
+			</siteMapNode>
+			<siteMapNode url="itthirdlevel.aspx" title="IT Operation Supervison"  description="Supervision of Creation/Modification Request">
+			</siteMapNode>
+		</siteMapNode>
+	</siteMapNode>
+	
+</siteMap>

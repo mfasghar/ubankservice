@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<DocumentElement>
+  <GLPostingSystem>
+    <ServerName>smtp.gmail.com</ServerName>
+    <SMTPPort>587</SMTPPort>
+    <UserName />
+    <Password />
+    <ToEmail />
+    <ServerID>5</ServerID>
+    <Connection>Data Source=172.24.1.46\ALERTS;Initial Catalog=GLPosting;User ID=sa;Password=link@123;</Connection>
+    <DownloadFilePath>C:\Ubl\</DownloadFilePath>
+    <TimeInterval>60000</TimeInterval>
+    <SourceUrl />
+    <LogFolderPath>C:\GLPostingService\logs\</LogFolderPath>
+    <strAmount>100000000</strAmount>
+    <StartTime>11-32 AM</StartTime>
+    <PibasString>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.2.45)(PORT=8778))(CONNECT_DATA=(SID=pibas1)));User Id=brs;Password=ubankbbbbsystem</PibasString>
+    <SybaseString>Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=172.24.2.45)(PORT=8778))(CONNECT_DATA=(SID=sybase1)));User Id=jaspersrv;Password=infosrv321~</SybaseString>
+  </GLPostingSystem>
+</DocumentElement>

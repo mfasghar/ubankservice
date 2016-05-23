@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/SMS_SEND/" name="SMS_SEND" targetNamespace="http://www.example.org/SMS_SEND/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <wsdl:appinfo source="WMQI_APPINFO">
+      <MRWSDLAppInfo imported="true">
+        <generatedMXSD location="SMS_SEND_InlineSchema1.mxsd" />
+        <binding hasEncoding="false" imported="true" name="SMS_SENDSOAP" originalBindingStyle="document" />
+      </MRWSDLAppInfo>
+    </wsdl:appinfo>
+  </wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/SMS_SEND/">
+      <xsd:include schemaLocation="https://esb.ufonegsm.net:7843/SendSMS?xsd=xsd0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SendSmsRequest">
+    <wsdl:part name="parameters" element="tns:SendSms" />
+  </wsdl:message>
+  <wsdl:message name="SendSmsResponse">
+    <wsdl:part name="parameters" element="tns:SendSmsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SMS_SEND">
+    <wsdl:operation name="SendSms">
+      <wsdl:input message="tns:SendSmsRequest" />
+      <wsdl:output message="tns:SendSmsResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SMS_SENDSOAP" type="tns:SMS_SEND">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendSms">
+      <soap:operation soapAction="http://www.example.org/SMS_SEND/SendSms" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SMS_SEND">
+    <wsdl:port name="SMS_SENDSOAP" binding="tns:SMS_SENDSOAP">
+      <soap:address location="https://esb.ufonegsm.net:7843/SendSMS" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

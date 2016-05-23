@@ -1,0 +1,30 @@
+SELECT SUBSTR (FROMACCOUNTNUMBERFA, 1, 4)  FROM  pls.BBTRANSACTIONS where transactiondate='20150312'
+
+
+SELECT SUBSTR (NARRATION,-11)  as branch_code FROM  pls.BBTRANSACTIONS where  NARRATION like 'Transfer%' AND transactiondate='20150312' AND RESPONSECODE = '00'
+
+
+Select VALUEDATEANDTIME as date_, SUBSTR (FROMACCOUNTNUMBERFA, 1, 4) AS branch_code ,TOACCOUNTNUMBERTA as pibas_acc, TRANSACTIONCODE, SUBSTR (NARRATION,-11)  as wallet_Acc, (TRANSACTIONAMOUNT/100) as transaction_amount  from pls.BBTRANSACTIONS  
+Where NARRATION like 'Transfer%' and transactiondate='20150312' AND RESPONSECODE = '00' Order by FROMACCOUNTNUMBERFA 
+
+
+
+ <ItemTemplate>
+                                                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" CommandName="SelectRec" Text="Select"></asp:LinkButton>
+                                                </ItemTemplate>
+
+
+
+
+
+
+Select VALUEDATEANDTIME as date_, SUBSTR (FROMACCOUNTNUMBERFA, 1, 4) AS branch_code ,TOACCOUNTNUMBERTA as pibas_acc, TRANSACTIONCODE, SUBSTR (NARRATION,-11)  as wallet_Acc, (TRANSACTIONAMOUNT/100) as transaction_amount  from pls.BBTRANSACTIONS
+Where NARRATION like 'Transfer%' and transactiondate Between '$P{From_date}' and '$P{To_Date}' AND RESPONSECODE = '00' Order by FROMACCOUNTNUMBERFA
+
+
+SELECT RefComplaints.complaint_id, RefComplaints.subject, RefComplaints.category, RefComplaints.date, RefComplaints.Assigne_to, RefComplaints.priority, RefComplaints.location, RefComplaints.url, RefComplaints.desription, RefComplaints.remarks, RefProjectCateg.ProjectCatDesc, sirGroup.UserID FROM RefComplaints INNER JOIN RefProjectCateg ON RefComplaints.ProjectCatID = RefProjectCateg.ProjectCatID LEFT OUTER JOIN sirGroup ON RefProjectCateg.ProjectCatID = sirGroup.ProjectCatID WHERE (sirGroup.UserID = @Param1)
+
+
+
+Select VALUEDATEANDTIME as date_, SUBSTR (FROMACCOUNTNUMBERFA, 1, 4) AS branch_code , TOACCOUNTNUMBERTA , FROMACCOUNTNUMBERFA ,TOACCOUNTNUMBERTA as pibas_acc, TRANSACTIONCODE, SUBSTR (NARRATION,-11)  as wallet_Acc, (TRANSACTIONAMOUNT/100) as transaction_amount  from pls.BBTRANSACTIONS
+Where NARRATION like 'Transfer%' and transactiondate Between '20150410' and '20150410' AND RESPONSECODE = '00' Order by FROMACCOUNTNUMBERFA

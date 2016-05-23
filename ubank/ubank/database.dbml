@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="umbldms" Class="databaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=172.24.1.74;Initial Catalog=umbldms;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="strConn" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AppFlow" Member="AppFlows">
+    <Type Name="AppFlow">
+      <Column Name="AppID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="DivisionID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LevelID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IsSupervised" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SupervisionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Application_AppFlow" Member="Application" ThisKey="AppID" OtherKey="AppID" Type="Application" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Application" Member="Applications">
+    <Type Name="Application">
+      <Column Name="AppID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserRequestTypeID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DivisionID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemRoleID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="EmpID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(254) NOT NULL" CanBeNull="false" />
+      <Column Name="UserLimitsDr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserLimitCr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserSupLimitDr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserSupLimitCr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ODLimit" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IBATranLimitDr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IBATranLimitCr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IBATranSupLimitDr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IBATranSupLimitCr" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="AppLevel" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="AppDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TranDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsClosed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RemarksFromITOps" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="IsDecline" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DeclineBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserExistingID" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IsSupComplete" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OppsITUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeclineReason" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Association Name="Application_AppFlow" Member="AppFlows" ThisKey="AppID" OtherKey="AppID" Type="AppFlow" />
+      <Association Name="Application_AppProcessCmpt" Member="AppProcessCmpts" ThisKey="AppID" OtherKey="AppID" Type="AppProcessCmpt" />
+      <Association Name="Application_emailStatus" Member="emailStatus" ThisKey="AppID" OtherKey="AppID" Type="emailStatus" />
+      <Association Name="RefDivision_Application" Member="RefDivision" ThisKey="DivisionID" OtherKey="DivisionID" Type="RefDivision" IsForeignKey="true" />
+      <Association Name="RefSystemRole_Application" Member="RefSystemRole" ThisKey="SystemRoleID" OtherKey="SystemRoleID" Type="RefSystemRole" IsForeignKey="true" />
+      <Association Name="RefUserLevel_Application" Member="RefUserLevel" ThisKey="AppLevel" OtherKey="LevelID" Type="RefUserLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AppProcessCmpt" Member="AppProcessCmpts">
+    <Type Name="AppProcessCmpt">
+      <Column Name="AppID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OppsRemarks" Type="System.String" DbType="VarChar(4000) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Application_AppProcessCmpt" Member="Application" ThisKey="AppID" OtherKey="AppID" Type="Application" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanySettings" Member="CompanySettings">
+    <Type Name="CompanySetting">
+      <Column Name="OrgID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrganizationName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NetworkDomain" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PasswordExpireIndays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyLogo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="passwordtryies" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AddressLine1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AddressLine2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AddressLine3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PhoneNums" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FaxNums" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="CompanySetting_UserManager" Member="UserManagers" ThisKey="OrgID" OtherKey="OrgID" Type="UserManager" />
+    </Type>
+  </Table>
+  <Table Name="dbo.departments" Member="departments">
+    <Type Name="department">
+      <Column Name="D_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="department_name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="department_email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.emailStatus" Member="emailStatus">
+    <Type Name="emailStatus">
+      <Column Name="AppID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailSentTo" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsEmailSent" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Application_emailStatus" Member="Application" ThisKey="AppID" OtherKey="AppID" Type="Application" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormNames" Member="FormNames">
+    <Type Name="FormName">
+      <Column Name="FormName" Member="FormName1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FormDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RightID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FormRights" Member="FormRights">
+    <Type Name="FormRight">
+      <Column Name="SrNo" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FormName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RightID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Granted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.News" Member="News">
+    <Type Name="New">
+      <Column Name="NewsCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="News" Type="System.String" DbType="VarChar(268)" CanBeNull="true" />
+      <Column Name="NewsDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsNewsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OraServerInfo" Member="OraServerInfos">
+    <Type Name="OraServerInfo">
+      <Column Name="ServerID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ServarName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="ServerIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ServerUser" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ServerPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ServerConnectionString" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="DNS" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefActivity" Member="RefActivities">
+    <Type Name="RefActivity">
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ActivityDes" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ActivityActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="RefActivity_RefComplaint" Member="RefComplaints" ThisKey="ActivityID" OtherKey="ActivityID" Type="RefComplaint" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefActivityDetails" Member="RefActivityDetails">
+    <Type Name="RefActivityDetail">
+      <Column Name="RefActivityId" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="complaint_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Activity_description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Activity_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Activity_performed_by" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefComplaints" Member="RefComplaints">
+    <Type Name="RefComplaint">
+      <Column Name="complaint_id" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="subject" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Assigne_to" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="desription" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="remarks" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="ProjectCatID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Assign_By" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Reported_problem_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Reported_channel_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="emp_id" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="emp_designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="emp_name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reporters_email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Reporters_number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="RefActivity_RefComplaint" Member="RefActivity" ThisKey="ActivityID" OtherKey="ActivityID" Type="RefActivity" IsForeignKey="true" />
+      <Association Name="RefProjectCateg_RefComplaint" Member="RefProjectCateg" ThisKey="ProjectCatID" OtherKey="ProjectCatID" Type="RefProjectCateg" IsForeignKey="true" />
+      <Association Name="UserManager_RefComplaint" Member="UserManager" ThisKey="Assigne_to" OtherKey="UserID" Type="UserManager" IsForeignKey="true" />
+      <Association Name="UserManager_RefComplaint1" Member="UserManager1" ThisKey="Assign_By" OtherKey="UserID" Type="UserManager" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefDivision" Member="RefDivisions">
+    <Type Name="RefDivision">
+      <Column Name="DivisionID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DivisionDesc" Type="System.String" DbType="VarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="IsDivisionActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="RefDivision_Application" Member="Applications" ThisKey="DivisionID" OtherKey="DivisionID" Type="Application" />
+      <Association Name="RefDivision_RefSystemRole" Member="RefSystemRoles" ThisKey="DivisionID" OtherKey="DivisionID" Type="RefSystemRole" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefLocation" Member="RefLocations">
+    <Type Name="RefLocation">
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LocationDes" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="BrSequence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BlockLocation" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PersonA" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PersonB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PersonAName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PersonAEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PersonBEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BlockForActionReg" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BlockForBranchStatus" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BlockForITCheckList" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BlockForSignatureView" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BranchAppServerIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BranchAppServerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BranchDBServerIP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BranchDBServerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocCoorName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocCoorPhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocPhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocAddress" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="LocSendEmail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OraTNS" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="RefLocation_UserManager" Member="UserManagers" ThisKey="LocationID" OtherKey="LocationID" Type="UserManager" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefPibasCon" Member="RefPibasCons">
+    <Type Name="RefPibasCon">
+      <Column Name="ConnCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ConnDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefPIBASConn" Member="RefPIBASConns">
+    <Type Name="RefPIBASConn">
+      <Column Name="ConnCode" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ConnDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefProjectCateg" Member="RefProjectCategs">
+    <Type Name="RefProjectCateg">
+      <Column Name="ProjectCatID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProjectCatDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProjectID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="RefProjectCateg_RefComplaint" Member="RefComplaints" ThisKey="ProjectCatID" OtherKey="ProjectCatID" Type="RefComplaint" />
+      <Association Name="RefProjectCateg_sirGroup" Member="sirGroups" ThisKey="ProjectCatID" OtherKey="ProjectCatID" Type="sirGroup" />
+      <Association Name="RefProject_RefProjectCateg" Member="RefProject" ThisKey="ProjectID" OtherKey="ProjectID" Type="RefProject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefProjects" Member="RefProjects">
+    <Type Name="RefProject">
+      <Column Name="ProjectID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ProjectDes" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="RefProject_RefProjectCateg" Member="RefProjectCategs" ThisKey="ProjectID" OtherKey="ProjectID" Type="RefProjectCateg" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[RefReported Problem]" Member="RefReported_Problems">
+    <Type Name="RefReported_Problem">
+      <Column Name="Reported_problem_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Problem_description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ProjectCatID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefRights" Member="RefRights">
+    <Type Name="RefRight">
+      <Column Name="RightID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RightDes" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefSystemRole" Member="RefSystemRoles">
+    <Type Name="RefSystemRole">
+      <Column Name="SystemRoleID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DivisionID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SystemRole" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="IsSystemRoleActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TranCode" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="MaxNoOfSupRequired" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="RefSystemRole_Application" Member="Applications" ThisKey="SystemRoleID" OtherKey="SystemRoleID" Type="Application" />
+      <Association Name="RefDivision_RefSystemRole" Member="RefDivision" ThisKey="DivisionID" OtherKey="DivisionID" Type="RefDivision" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefSystemRoleSupervisors" Member="RefSystemRoleSupervisors">
+    <Type Name="RefSystemRoleSupervisor">
+      <Column Name="SystemRoleID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LevelID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefUserLevel" Member="RefUserLevels">
+    <Type Name="RefUserLevel">
+      <Column Name="LevelID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LevelDesc" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="IsLevelIDActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="RefUserLevel_Application" Member="Applications" ThisKey="LevelID" OtherKey="AppLevel" Type="Application" />
+      <Association Name="RefUserLevel_UserManager" Member="UserManagers" ThisKey="LevelID" OtherKey="LevelID" Type="UserManager" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefUserRequestType" Member="RefUserRequestTypes">
+    <Type Name="RefUserRequestType">
+      <Column Name="UserRequestTypeID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserRequestType" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsUserRequestTypeActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsLimitsRequired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsUserNameRequired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reported_channel" Member="Reported_channels">
+    <Type Name="Reported_channel">
+      <Column Name="Reported_channel_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Report_description" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RequestDetail" Member="RequestDetails">
+    <Type Name="RequestDetail">
+      <Column Name="RowID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskActivityDesc" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="ActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ActivityRowCount" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ReportedTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ReportedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RecordedBy" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ReportedMedia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactTo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="StatusUpdatedBy" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Requests" Member="Requests">
+    <Type Name="Request">
+      <Column Name="ProjectID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestDes" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Critical" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DocAttached" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="LocationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Solution" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssignedTo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssignedBy" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sirGroup" Member="sirGroups">
+    <Type Name="sirGroup">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProjectCatID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="RefProjectCateg_sirGroup" Member="RefProjectCateg" ThisKey="ProjectCatID" OtherKey="ProjectCatID" Type="RefProjectCateg" IsForeignKey="true" />
+      <Association Name="UserManager_sirGroup" Member="UserManager" ThisKey="UserID" OtherKey="UserID" Type="UserManager" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserCategory" Member="UserCategories">
+    <Type Name="UserCategory">
+      <Column Name="UserCategoryCode" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UserCategory" Member="UserCategory1" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserManager" Member="UserManagers">
+    <Type Name="UserManager">
+      <Column Name="OrgID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Employee_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="RoleId" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="RoleOveride" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PasswordExpireDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PasswordExpire" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LoginTimeFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LoginTimeTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccountDisabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LeaveSpecialApproval" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IdentiyHRAndMIS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UserBlocked" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OfficeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocationID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrgEmail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OtherEmialAddress" Type="System.String" DbType="VarChar(260)" CanBeNull="true" />
+      <Column Name="MgrEmailaddress" Type="System.String" DbType="VarChar(260)" CanBeNull="true" />
+      <Column Name="SendEmail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CCEmail" Type="System.String" DbType="VarChar(260)" CanBeNull="true" />
+      <Column Name="UserOfActionRegister" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="LevelID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="DivisionID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="UserGroupID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IsGroupUser" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="UserManager_RefComplaint" Member="RefComplaints" ThisKey="UserID" OtherKey="Assigne_to" Type="RefComplaint" />
+      <Association Name="UserManager_RefComplaint1" Member="RefComplaints1" ThisKey="UserID" OtherKey="Assign_By" Type="RefComplaint" />
+      <Association Name="UserManager_sirGroup" Member="sirGroups" ThisKey="UserID" OtherKey="UserID" Type="sirGroup" />
+      <Association Name="CompanySetting_UserManager" Member="CompanySetting" ThisKey="OrgID" OtherKey="OrgID" Type="CompanySetting" IsForeignKey="true" />
+      <Association Name="RefLocation_UserManager" Member="RefLocation" ThisKey="LocationID" OtherKey="LocationID" Type="RefLocation" IsForeignKey="true" />
+      <Association Name="RefUserLevel_UserManager" Member="RefUserLevel" ThisKey="LevelID" OtherKey="LevelID" Type="RefUserLevel" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserManagerGroup" Member="UserManagerGroups">
+    <Type Name="UserManagerGroup">
+      <Column Name="UserGroupID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserGroupDesc" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupEmailID" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="GroupEmailCC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserRightsAtFormDelete" Member="UserRightsAtFormDeletes">
+    <Type Name="UserRightsAtFormDelete">
+      <Column Name="SrNo" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="FormName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FormDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RightDes" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Granted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_aspnet_Users" Member="vw_aspnet_Users">
+    <Type Name="vw_aspnet_User">
+      <Column Name="ApplicationId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LoweredUserName" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileAlias" Type="System.String" DbType="NVarChar(16)" CanBeNull="true" />
+      <Column Name="IsAnonymous" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="LastActivityDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vw_aspnet_UsersInRoles" Member="vw_aspnet_UsersInRoles">
+    <Type Name="vw_aspnet_UsersInRole">
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RoleId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebAccessStatus" Member="WebAccessStatus">
+    <Type Name="WebAccessStatus">
+      <Column Name="LoginAtWeb" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="WorkstationName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="WebAccessDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ComputerID" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="SystemLoginID" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="ChangeDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ClientBrowser" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="WindowsLogin" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="OSNameAndVer" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

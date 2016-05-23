@@ -1,0 +1,61 @@
+﻿div.ticker
+{
+    text-align: left;
+    background-color: #f0f0f0;
+    border: solid 1px #bbb;
+    margin: 0px 5px 5px 5px;
+}
+
+div.narrow {
+    width: 200px;
+}
+
+div.medium {
+}
+
+div.long {
+    width: 800px;
+}
+
+div.stretched {
+    width: 99%;
+}
+
+div.threeRows {
+    height: 300px;
+}
+
+div.twoRows {
+}
+
+div.oneRow {
+    height: 100px;
+}
+
+
+div.ticker ul {
+   list-style: none outside;
+   margin: 0;
+   padding: 5px;
+}
+
+div.oneRow li, div.twoRows li, div.threeRows li {
+    margin-bottom: 5px;
+    position: relative;
+    height: 100px;
+}
+
+div.ticker li .header {
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+div.ticker li .body {
+    font-size: 8pt;
+}
+
+div.ticker li .footer {
+    font-size: 8pt;
+    text-align: right;
+    font-weight: bold;
+}

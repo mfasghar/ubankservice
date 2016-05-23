@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection ConnectionStringObject="Data Source=skm;Persist Security Info=True;User ID=system;Password=oracle;Unicode=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="skm.SYSTEM" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LMFLOANSHISTORYTableAdapter" GeneratorDataComponentClassName="LMFLOANSHISTORYTableAdapter" Name="LMFLOANSHISTORY" UserDataComponentName="LMFLOANSHISTORYTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="skm.SYSTEM" DbObjectName="LMF.LMFLOANSHISTORY" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT BRANCH_CODE, LOAN_CODE FROM LMF.LMFLOANSHISTORY</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BRANCH_CODE" DataSetColumn="BRANCH_CODE" />
+              <Mapping SourceColumn="LOAN_CODE" DataSetColumn="LOAN_CODE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet" msprop:Generator_UserDSName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LMFLOANSHISTORY" msprop:Generator_TableClassName="LMFLOANSHISTORYDataTable" msprop:Generator_TableVarName="tableLMFLOANSHISTORY" msprop:Generator_TablePropName="LMFLOANSHISTORY" msprop:Generator_RowDeletingName="LMFLOANSHISTORYRowDeleting" msprop:Generator_RowChangingName="LMFLOANSHISTORYRowChanging" msprop:Generator_RowEvHandlerName="LMFLOANSHISTORYRowChangeEventHandler" msprop:Generator_RowDeletedName="LMFLOANSHISTORYRowDeleted" msprop:Generator_UserTableName="LMFLOANSHISTORY" msprop:Generator_RowChangedName="LMFLOANSHISTORYRowChanged" msprop:Generator_RowEvArgName="LMFLOANSHISTORYRowChangeEvent" msprop:Generator_RowClassName="LMFLOANSHISTORYRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BRANCH_CODE" msprop:Generator_ColumnVarNameInTable="columnBRANCH_CODE" msprop:Generator_ColumnPropNameInRow="BRANCH_CODE" msprop:Generator_ColumnPropNameInTable="BRANCH_CODEColumn" msprop:Generator_UserColumnName="BRANCH_CODE" type="xs:decimal" />
+              <xs:element name="LOAN_CODE" msprop:Generator_ColumnVarNameInTable="columnLOAN_CODE" msprop:Generator_ColumnPropNameInRow="LOAN_CODE" msprop:Generator_ColumnPropNameInTable="LOAN_CODEColumn" msprop:Generator_UserColumnName="LOAN_CODE" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
